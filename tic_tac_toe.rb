@@ -55,23 +55,23 @@ class Game
 
 		case x_move
 		when "a1"
-			array[1][1] = "|O|"
+			@array[1][1] = "|O|"
 		when "a2"
-			array[2][1] = "|O|"
+			@array[2][1] = "|O|"
 		when "a3"
-			array[3][1] = "|O|"
+			@array[3][1] = "|O|"
 		when "b1"
-			array[1][2] = "|O|"
+			@array[1][2] = "|O|"
 		when "b2"
-			array[2][2] = "|O|"
+			@array[2][2] = "|O|"
 		when "b3"
-			array[3][2] = "|O|"
+			@array[3][2] = "|O|"
 		when "c1"
-			array[1][3] = "|O|"
+			@array[1][3] = "|O|"
 		when "c2"
-			array[2][3] = "|O|"
+			@array[2][3] = "|O|"
 		when "c3"
-			array[3][3] = "|O|"
+			@array[3][3] = "|O|"
 		end
 	end
 
@@ -179,6 +179,15 @@ end
 
 my_game = Game.new
 my_game.show_board
+while my_game.win? == false
+	my_game.get_x_move
+	my_game.show_board
+	my_game.win?
+	my_game.get_o_move
+	my_game.show_board
+	my_game.win?
+end
+
 
 
 
