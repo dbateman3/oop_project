@@ -166,9 +166,19 @@ class Game
 
 		if x_win == true
 			puts "Player X wins!"
-			return true
+			@end = true
 		elsif o_win == true
 			puts "Player O wins!"
+			@end = true
+		else
+			@end = false
+		end
+
+
+	end
+
+	def end_my_game
+		if @end_game == true
 			return true
 		else
 			return false
@@ -179,13 +189,14 @@ end
 
 my_game = Game.new
 my_game.show_board
-while my_game.win? == false
+end_game = my_game.win?
+while my_game.end_my_game == false
 	my_game.get_x_move
 	my_game.show_board
-	my_game.win?
+	end_game = my_game.win?
 	my_game.get_o_move
 	my_game.show_board
-	my_game.win?
+	end_game = my_game.win?
 end
 
 
